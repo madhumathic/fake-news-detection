@@ -10,7 +10,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request, send_from_directory
 from werkzeug.exceptions import HTTPException
 
-from backend.app.api import routes_analysis, routes_history, routes_prediction
+from app.api import routes_analysis, routes_history, routes_prediction
 from backend.app.database.init_db import init_db
 from backend.app.schemas.prediction import ApiError
 from src.config import ROOT
