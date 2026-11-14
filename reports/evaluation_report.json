@@ -1,0 +1,117 @@
+{
+  "test_size": 1161,
+  "accuracy": 0.9741602067183462,
+  "accuracy_95ci": [
+    0.9634,
+    0.9818
+  ],
+  "precision": 0.9702479338842975,
+  "recall": 0.9799666110183639,
+  "f1_score": 0.9750830564784053,
+  "positive_class": "REAL",
+  "macro_f1": 0.9741247124968055,
+  "roc_auc": 0.9968779519840303,
+  "train_accuracy": 1.0,
+  "overfit_gap_train_minus_test": 0.025839793281653756,
+  "majority_baseline_accuracy": 0.5159345391903531,
+  "p_value_vs_baseline": 0.0,
+  "better_than_baseline": true,
+  "confusion_matrix": {
+    "labels": [
+      "FAKE",
+      "REAL"
+    ],
+    "matrix": [
+      [
+        544,
+        18
+      ],
+      [
+        12,
+        587
+      ]
+    ],
+    "TN_fake_as_fake": 544,
+    "FP_fake_as_real": 18,
+    "FN_real_as_fake": 12,
+    "TP_real_as_real": 587
+  },
+  "classification_report": {
+    "FAKE": {
+      "precision": 0.9784172661870504,
+      "recall": 0.9679715302491103,
+      "f1-score": 0.9731663685152058,
+      "support": 562.0
+    },
+    "REAL": {
+      "precision": 0.9702479338842975,
+      "recall": 0.9799666110183639,
+      "f1-score": 0.9750830564784053,
+      "support": 599.0
+    },
+    "accuracy": 0.9741602067183462,
+    "macro avg": {
+      "precision": 0.974332600035674,
+      "recall": 0.9739690706337372,
+      "f1-score": 0.9741247124968055,
+      "support": 1161.0
+    },
+    "weighted avg": {
+      "precision": 0.9742024254899369,
+      "recall": 0.9741602067183462,
+      "f1-score": 0.9741552540362709,
+      "support": 1161.0
+    }
+  },
+  "reliability": {
+    "level": "good",
+    "reliable": true,
+    "message": "The model performs well on the test data. It can still be wrong on news that differs from its training data."
+  },
+  "model_name": "Linear SVM",
+  "top_terms": {
+    "towards_FAKE": [
+      "video",
+      "president trump",
+      "just",
+      "gop",
+      "image",
+      "read",
+      "featured image",
+      "featured",
+      "hillary",
+      "breaking",
+      "obama",
+      "getty",
+      "america",
+      "getty images",
+      "mr"
+    ],
+    "towards_REAL": [
+      "president donald",
+      "wednesday",
+      "republican",
+      "thursday",
+      "tuesday",
+      "said statement",
+      "friday",
+      "monday",
+      "presidential",
+      "sunday",
+      "spokesman",
+      "democratic",
+      "trump said",
+      "president barack",
+      "said thursday"
+    ]
+  },
+  "label_shuffle_check": {
+    "repeats": 3,
+    "test_accuracy_with_shuffled_labels": [
+      0.5159,
+      0.5159,
+      0.5159
+    ],
+    "mean": 0.5159
+  }
+}

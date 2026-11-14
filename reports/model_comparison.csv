@@ -1,0 +1,5 @@
+model,is_baseline,cv_accuracy_mean,cv_accuracy_std,cv_precision_mean,cv_precision_std,cv_recall_mean,cv_recall_std,cv_f1_mean,cv_f1_std,train_accuracy_mean,overfit_gap,fit_seconds,selected,beats_baseline_by_2_std
+Linear SVM,False,0.9657,0.0061,0.9586,0.0081,0.9758,0.0055,0.9671,0.0058,1.0,0.0343,8.0,True,True
+Logistic Regression,False,0.9515,0.0083,0.9423,0.0109,0.9654,0.0129,0.9536,0.008,0.9827,0.0312,9.1,False,True
+Multinomial Naive Bayes,False,0.9295,0.0096,0.9183,0.0145,0.9482,0.0138,0.9329,0.0089,0.9609,0.0314,8.0,False,True
+Majority-class baseline,True,0.5164,0.0004,0.5164,0.0004,1.0,0.0,0.6811,0.0004,0.5164,0.0,10.5,False,False

@@ -1,0 +1,63 @@
+{
+  "total": 1161,
+  "errors": 30,
+  "error_rate": 0.0258,
+  "false_positives_fake_called_real": 18,
+  "false_negatives_real_called_fake": 12,
+  "mean_confidence_when_correct": 97.81,
+  "mean_confidence_when_wrong": 74.94,
+  "error_rate_by_length": {
+    "short": 0.0257,
+    "medium": 0.0258,
+    "long": 0.026
+  },
+  "error_rate_by_metadata": {
+    "subject": {
+      "Government News": 0.1143,
+      "Middle-east": 0.0,
+      "News": 0.0043,
+      "US_News": 0.0,
+      "left-news": 0.0465,
+      "politics": 0.0539,
+      "politicsNews": 0.0308,
+      "worldnews": 0.0098
+    }
+  },
+  "most_confident_mistakes": [
+    {
+      "actual": "FAKE",
+      "predicted": "REAL",
+      "confidence": 99.39,
+      "title": "BREAKING: RUSSIA SMELLS OBAMA\u2019S FOREIGN POLICY WEAKNESS AND MAKES A MOVE",
+      "excerpt": "Leading from behind hasn t worked out so well for Obama and now Russia has taken full advantage of our perceived weakness when it comes to building ties with China and other superpowers. This is a dan"
+    },
+    {
+      "actual": "FAKE",
+      "predicted": "REAL",
+      "confidence": 98.75,
+      "title": "EGYPTIAN COURT SENTENCES MUSLIM BROTHERHOOD LEADER AND 13 OTHERS TO DEATH AND LEADER\u2019S \u201cPeaceful\u201d U.S.-Egyptian Brother ",
+      "excerpt": "But wait wasn t the Muslim Brotherhood s Arab Spring (Sharia Law for all Egyptians) supposed to be a good thing? An Egyptian court sentenced Mohamed Badie, leader of the outlawed Muslim Brotherhood, a"
+    },
+    {
+      "actual": "REAL",
+      "predicted": "FAKE",
+      "confidence": 94.44,
+      "title": "Russia's response to Trump leak reports: don't read U.S. newspapers",
+      "excerpt": "A Russian Foreign Ministry spokeswoman on Tuesday advised that people don\u2019t read American newspapers, in response to U.S. media reports that President Donald Trump had disclosed classified intelligenc"
+    },
+    {
+      "actual": "FAKE",
+      "predicted": "REAL",
+      "confidence": 93.47,
+      "title": "CHINESE IMMIGRANT OWES MILLIONS FOR SELLING COUNTERFEIT GOODS IN U.S. GETS Protection From Chinese Banks And U.S. Citize",
+      "excerpt": "Counterfeiting is illegal by the way and shouldn t be rewarded with American citizenship This could be the story of an American dream. An immigrant family builds a successful business and buys a four-"
+    },
+    {
+      "actual": "FAKE",
+      "predicted": "REAL",
+      "confidence": 92.23,
+      "title": "BREAKING: SOCIALIST BRAZIL Declares FINANCIAL DISASTER Less Than 2 Months Before Start Of Olympics",
+      "excerpt": "Corruption and socialism go hand in hand Brazil is no exception!Here s the backstory on the corrupt Brazillian President and how she drained the coffers. It hasn t helped that the lower oil prices hav"
+    }
+  ]
+}

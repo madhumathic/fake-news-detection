@@ -1,0 +1,168 @@
+{
+  "files": [
+    {
+      "file": "news_dataset.csv",
+      "records": 6000,
+      "columns": [
+        "title",
+        "text",
+        "subject",
+        "date",
+        "label"
+      ]
+    }
+  ],
+  "records": 6000,
+  "n_columns": 5,
+  "columns": {
+    "title": "str",
+    "text": "str",
+    "subject": "str",
+    "date": "str",
+    "label": "int64"
+  },
+  "detected_columns": {
+    "text": "text",
+    "title": "title",
+    "label": "label",
+    "date": "date"
+  },
+  "missing_values": {
+    "title": 0,
+    "text": 0,
+    "subject": 0,
+    "date": 0,
+    "label": 0
+  },
+  "duplicates": {
+    "full_row": 5,
+    "text": 170,
+    "title": 116,
+    "title_and_text": 108
+  },
+  "empty_text_records": 66,
+  "words_per_article": {
+    "count": 6000.0,
+    "mean": 404.07,
+    "std": 356.75,
+    "min": 0.0,
+    "25%": 204.75,
+    "50%": 359.0,
+    "75%": 509.0,
+    "max": 8135.0
+  },
+  "empty_title_records": 0,
+  "label_column": "label",
+  "raw_label_values": {
+    "0": 3000,
+    "1": 3000
+  },
+  "label_mapping": {
+    "0": "FAKE",
+    "1": "REAL"
+  },
+  "class_distribution": {
+    "FAKE": 3000,
+    "REAL": 3000
+  },
+  "imbalance_ratio_majority_to_minority": 1.0,
+  "is_balanced": true,
+  "irrelevant_columns": [
+    {
+      "column": "date",
+      "unique_values": 1911,
+      "missing": 0,
+      "reason": "metadata (a date); not used as a feature"
+    }
+  ],
+  "leakage_checks": [
+    {
+      "column": "subject",
+      "association_with_label_cramers_v": 1.0,
+      "p_value": 0.0,
+      "suspicious": true,
+      "label_counts_by_value": {
+        "Government News": {
+          "FAKE": 185,
+          "REAL": 0
+        },
+        "Middle-east": {
+          "FAKE": 100,
+          "REAL": 0
+        },
+        "News": {
+          "FAKE": 1175,
+          "REAL": 0
+        },
+        "US_News": {
+          "FAKE": 97,
+          "REAL": 0
+        },
+        "left-news": {
+          "FAKE": 573,
+          "REAL": 0
+        },
+        "politics": {
+          "FAKE": 870,
+          "REAL": 0
+        },
+        "politicsNews": {
+          "FAKE": 0,
+          "REAL": 1564
+        },
+        "worldnews": {
+          "FAKE": 0,
+          "REAL": 1436
+        }
+      }
+    }
+  ],
+  "length_leakage_check": {
+    "mean_words_FAKE": 424.08,
+    "mean_words_REAL": 384.07,
+    "effect_size_cohens_d": 0.1123
+  },
+  "date_format_check": {
+    "association_with_label_cramers_v": 1.0,
+    "p_value": 0.0,
+    "suspicious": true,
+    "note": "writing style of the date (abbreviated vs full month) differs between classes"
+  },
+  "agency_tag_check": {
+    "share_of_articles_with_agency_tag_by_label": {
+      "FAKE": 0.0023,
+      "REAL": 0.989
+    },
+    "suspicious": true,
+    "action": "agency tags such as '(Reuters)' are removed by clean_text() in training and prediction"
+  },
+  "title_contained_in_text_share": 0.0,
+  "word_label_signal": {
+    "vocabulary_tested": 16242,
+    "significant_words_p_lt_0.05": 7151,
+    "expected_by_chance": 812.1,
+    "ratio_observed_to_chance": 8.81,
+    "smallest_p_value": 0.0
+  },
+  "text_signal_warning": false,
+  "cleaning_steps": {
+    "rows_in": 6000,
+    "removed_unlabelled": 0,
+    "removed_missing_text": 0,
+    "removed_empty_text": 75,
+    "removed_too_short": 18,
+    "removed_conflicting_labels": 0,
+    "removed_duplicates": 106,
+    "rows_out": 5801,
+    "label_mapping_used": {
+      "0": "FAKE",
+      "1": "REAL"
+    },
+    "columns_detected": {
+      "text": "text",
+      "title": "title",
+      "label": "label",
+      "date": "date"
+    }
+  }
+}
