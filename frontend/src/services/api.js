@@ -18,7 +18,7 @@ async function request(path, options = {}) {
     });
   } catch {
     throw new ApiError(
-      "Cannot reach the server. Make sure the backend is running (python -m backend.app.main).",
+      "Cannot reach the server. Make sure the backend is running (python -m app.main).",
       "network_error"
     );
   }

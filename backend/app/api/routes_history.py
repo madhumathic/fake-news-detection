@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 
-from backend.app.schemas.prediction import ApiError
-from backend.app.services import history_service
+from app.schemas.prediction import ApiError
+from app.services import history_service
 
 bp = Blueprint("history", __name__, url_prefix="/api")
 

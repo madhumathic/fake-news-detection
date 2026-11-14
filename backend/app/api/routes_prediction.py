@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify, request
 
-from backend.app.database.database import db_path
-from backend.app.schemas.prediction import ApiError
-from backend.app.services import prediction_service
+from app.database.database import db_path
+from app.schemas.prediction import ApiError
+from app.services import prediction_service
 
 bp = Blueprint("prediction", __name__, url_prefix="/api")
 

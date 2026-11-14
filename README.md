@@ -128,7 +128,7 @@ python -m unittest discover -s tests -t . -v
 
 ### Step 7 - Start the backend (terminal 1)
 ```
-python -m backend.app.main
+python -m app.main
 ```
 Check it: open http://127.0.0.1:5000/api/health in a browser. The database `database/history.db` is created automatically.
 
@@ -148,7 +148,7 @@ npm run dev
 cd frontend
 npm run build
 cd ..
-python -m backend.app.main
+python -m app.main
 ```
 After the build, Flask also serves the React app, so http://127.0.0.1:5000 shows the whole application.
 
@@ -189,8 +189,8 @@ This project was **not deployed** to any hosting service. Suggested options:
 
 **A. One server (simplest).** Build the frontend (`npm run build`), copy the whole project (including `models/` and `frontend/dist`)
 to a host that runs Python, install `backend/requirements.txt` plus a production server and start it from the project root:
-* Windows: `pip install waitress` then `waitress-serve --listen=0.0.0.0:8000 backend.app.main:app`
-* Linux: `pip install gunicorn` then `gunicorn -w 2 -b 0.0.0.0:8000 backend.app.main:app`
+* Windows: `pip install waitress` then `waitress-serve --listen=0.0.0.0:8000 app.main:app`
+* Linux: `pip install gunicorn` then `gunicorn -w 2 -b 0.0.0.0:8000 app.main:app`
 
 **B. Separate frontend and backend.**
 1. Backend on a Python host (for example Render, Railway or PythonAnywhere): same command as above; set
@@ -205,7 +205,7 @@ deployed with the code. Retrain on the host's scikit-learn version if loading th
 ## 11. Troubleshooting
 | Problem | Fix |
 |---|---|
-| `ModuleNotFoundError: No module named 'src'` or `'backend'` | Run commands from the **project root**, and start the API with `python -m backend.app.main` (not `python main.py`). |
+| `ModuleNotFoundError: No module named 'src'` or `'backend'` | Run commands from the **project root**, and start the API with `python -m app.main` (not `python main.py`). |
 | `ModuleNotFoundError: sklearn / flask / pandas` | Activate `.venv` and run `pip install -r backend/requirements.txt`. |
 | `pip` errors building packages | Use Python 3.12 (64-bit), run `python -m pip install --upgrade pip`, retry. |
 | PowerShell: *running scripts is disabled* | `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` or use Command Prompt. |

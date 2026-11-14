@@ -1,6 +1,6 @@
 """Glue between the API and the saved ML model."""
-from backend.app.schemas.prediction import validate_prediction_payload
-from backend.app.services import analysis_service, history_service
+from app.schemas.prediction import validate_prediction_payload
+from app.services import analysis_service, history_service
 from src.models.predict import Predictor
 
 _predictor = Predictor()

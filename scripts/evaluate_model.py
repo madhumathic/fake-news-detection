@@ -46,7 +46,7 @@ def main():
     print(f" Confusion matrix       : TN={cm['TN_fake_as_fake']}  FP={cm['FP_fake_as_real']}  FN={cm['FN_real_as_fake']}  TP={cm['TP_real_as_real']}")
     print(f"\n Verdict: {report['reliability']['message']}")
     print("\n Saved: reports/evaluation_report.json, reports/error_analysis.json, reports/figures/confusion_matrix.png")
-    print(" Next:  python scripts/generate_reports.py   then   python -m backend.app.main")
+    print(" Next:  python scripts/generate_reports.py   then   python -m app.main")
 
 
 if __name__ == "__main__":

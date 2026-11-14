@@ -1,5 +1,5 @@
-"""Create (or reset) the history database.  python -m backend.app.database.init_db"""
-from backend.app.database.database import connection, db_path
+"""Create (or reset) the history database.  python -m app.database.init_db"""
+from app.database.database import connection, db_path
 
 
 def init_db():

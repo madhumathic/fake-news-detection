@@ -1,7 +1,7 @@
 """Store, list and clear prediction history."""
 from datetime import datetime
 
-from backend.app.database.database import connection
+from app.database.database import connection
 
 PREVIEW_CHARS = 240
 

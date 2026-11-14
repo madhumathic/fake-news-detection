@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # project root -> 
 
 import sys
 
-from backend.app.database.init_db import init_db, reset_db
+from app.database.init_db import init_db, reset_db
 from src.config import DB_PATH
 
 

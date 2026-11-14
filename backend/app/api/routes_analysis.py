@@ -1,6 +1,6 @@
 from flask import Blueprint, abort, jsonify, send_file
 
-from backend.app.services import analysis_service
+from app.services import analysis_service
 
 bp = Blueprint("analysis", __name__, url_prefix="/api")
 

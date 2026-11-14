@@ -1,6 +1,6 @@
 """Flask application factory.
 
-Run from the PROJECT ROOT:   python -m backend.app.main
+Run from the PROJECT ROOT:   python -m app.main
 API:  http://127.0.0.1:5000/api/health
 If frontend/dist exists (after `npm run build`) the same server also serves the web app.
 """
@@ -11,8 +11,8 @@ from flask import Flask, jsonify, request, send_from_directory
 from werkzeug.exceptions import HTTPException
 
 from app.api import routes_analysis, routes_history, routes_prediction
-from backend.app.database.init_db import init_db
-from backend.app.schemas.prediction import ApiError
+from app.database.init_db import init_db
+from app.schemas.prediction import ApiError
 from src.config import ROOT
 from src.models.predict import ModelNotFoundError
 

@@ -14,7 +14,7 @@ class ApiTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         os.environ["FND_DB_PATH"] = os.path.join(cls.tmp.name, "test_history.db")   # never touch the real history
-        from backend.app.main import create_app
+        from app.main import create_app
         cls.client = create_app().test_client()
 
     @classmethod
