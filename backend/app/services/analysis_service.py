@@ -6,7 +6,7 @@ import re
 import sys
 from pathlib import Path
 
-import pandas as pd
+import csv
 
 # Add the main project folder to Python's import path
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
@@ -44,10 +44,9 @@ def read_csv_records(path):
         return []
 
     try:
-        return json.loads(
-            pd.read_csv(path).to_json(orient="records")
-        )
-    except Exception:
+        with open(path, newline="", encoding="utf-8") as fh:
+            return list(csv.DictReader(fh))
+    except (OSError, csv.Error):
         return []
 
 

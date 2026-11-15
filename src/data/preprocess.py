@@ -1,44 +1,12 @@
 
-"""Phase 4 - Data preparation: text cleaning and dataset cleaning."""
-
-import html
-import re
+"""Phase 4 - Data preparation and dataset cleaning."""
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from src.config import MIN_WORDS, RANDOM_STATE, TEST_SIZE
 from src.data.load_data import DatasetError, detect_columns, infer_label_mapping
-
-
-HTML_TAG_RE = re.compile(r"</?[A-Za-z!][^>]*>")
-URL_RE = re.compile(
-    r"(?:https?://|www\.)\S+|\bpic\.twitter\.com/\S+",
-    re.IGNORECASE,
-)
-DATELINE_RE = re.compile(
-    r"(?:[A-Z][A-Z .,'/\-]{0,40})?\(Reuters\)\s*[-–—:]\s*"
-)
-SOURCE_RE = re.compile(r"\bReuters\b", re.IGNORECASE)
-WHITESPACE_RE = re.compile(r"\s+")
-
-
-def clean_text(value):
-    """Clean article text consistently during training and prediction."""
-
-    if value is None or (
-        not isinstance(value, str) and pd.isna(value)
-    ):
-        return ""
-
-    text = HTML_TAG_RE.sub(" ", str(value))
-    text = html.unescape(text)
-    text = HTML_TAG_RE.sub(" ", text)
-    text = URL_RE.sub(" ", text)
-    text = DATELINE_RE.sub(" ", text)
-    text = SOURCE_RE.sub(" ", text)
-
-    return WHITESPACE_RE.sub(" ", text).strip()
+from src.data.text_cleaning import clean_text
 
 
 def word_count(text):

@@ -12,7 +12,7 @@ from src.config import (
     MODEL_PATH,
     VECTORIZER_PATH,
 )
-from src.data.preprocess import clean_text
+from src.data.text_cleaning import clean_text
 
 
 class ModelNotFoundError(Exception):
