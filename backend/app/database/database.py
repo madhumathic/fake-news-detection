@@ -1,8 +1,17 @@
+
 """SQLite access for the prediction history (database/history.db)."""
+
 import os
 import sqlite3
+import sys
 from contextlib import contextmanager
 from pathlib import Path
+
+# Add the main project folder to Python's import path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.config import DB_PATH
 
@@ -18,17 +27,20 @@ CREATE TABLE IF NOT EXISTS history (
 
 
 def db_path():
-    """Database file. Can be overridden with the FND_DB_PATH environment variable (used by tests)."""
+    """Database file. Can be overridden with FND_DB_PATH."""
     return Path(os.environ.get("FND_DB_PATH", DB_PATH))
 
 
 @contextmanager
 def connection():
-    """Open a connection, create the table if the database is new or was deleted, commit on success."""
+    """Open a connection and create the table if needed."""
+
     path = db_path()
     path.parent.mkdir(parents=True, exist_ok=True)
+
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
+
     try:
         conn.execute(SCHEMA)
         yield conn

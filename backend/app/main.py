@@ -6,7 +6,17 @@ If frontend/dist exists (after `npm run build`) the same server also serves the 
 """
 import os
 from pathlib import Path
+import sys
 
+CURRENT_FILE = Path(__file__).resolve()
+
+PROJECT_ROOT = next(
+    (p for p in CURRENT_FILE.parents if (p / "src" / "config.py").is_file()),
+    CURRENT_FILE.parents[1]
+)
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 from flask import Flask, jsonify, request, send_from_directory
 from werkzeug.exceptions import HTTPException
 
