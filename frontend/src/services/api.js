@@ -1,6 +1,6 @@
 // All communication with the Flask backend. Paths are relative ("/api/...") so the
 // Vite dev proxy (or the Flask server itself, after "npm run build") answers them.
-const BASE = import.meta.env.VITE_API_URL || "";
+const BASE = import.meta.env.VITE_API_URL || "https://fake-news-detection-s6ig.onrender.com";
 
 export class ApiError extends Error {
   constructor(message, code) {
